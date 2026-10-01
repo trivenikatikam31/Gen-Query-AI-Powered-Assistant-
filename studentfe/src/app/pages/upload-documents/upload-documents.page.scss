@@ -1,0 +1,75 @@
+/* Page background */
+.bg-doc{
+  --background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+}
+
+/* Card styling */
+ion-card {
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 18px;
+}
+
+.header-bar {
+  --background: #1e3c72;
+  color: #fff;
+}
+
+/* Card title */
+ion-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Upload input spacing */
+ion-input {
+  --background: #ffffff;
+  --padding-start: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* File input */
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px dashed #cfd8dc;
+  background: #ffffff;
+}
+
+/* Upload button */
+ion-button {
+  --border-radius: 10px;
+  font-weight: 500;
+}
+
+/* Document list item */
+ion-item {
+  --background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Document title */
+ion-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* View button */
+ion-item ion-button {
+  margin-left: 8px;
+}
+
+/* Empty state (optional) */
+.empty-state {
+  text-align: center;
+  color: #777;
+  margin-top: 30px;
+}
+

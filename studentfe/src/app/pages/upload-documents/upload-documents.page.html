@@ -1,0 +1,78 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>upload-documents</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">upload-documents</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content> -->
+<ion-header>
+  <ion-toolbar class="header-bar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Documents</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-doc">
+
+  <!-- Upload Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Upload Document</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-input
+        label="Title"
+        placeholder="Enter title"
+        [(ngModel)]="title">
+      </ion-input>
+
+      <br>
+
+      <input type="file" #fileInput  (change)="selectFile($event)" />
+
+      <br><br>
+
+      <ion-button expand="block" (click)="upload(fileInput)">
+        Upload
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- View Documents -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>My Documents</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+
+        <ion-item *ngFor="let doc of docs">
+          <ion-label>{{ doc.title }}</ion-label>
+
+          <ion-button
+            fill="outline"
+            size="small"
+            (click)="openDoc(doc)">
+            View
+          </ion-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

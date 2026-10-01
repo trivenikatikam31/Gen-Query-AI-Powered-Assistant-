@@ -1,0 +1,60 @@
+/* Background */
+.signup-bg {
+  --background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Container */
+.signup-container {
+  min-height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Brand */
+.brand {
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.brand h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.brand p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}
+
+/* Card */
+.signup-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
+ion-item {
+  --border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.signup-btn {
+  margin-top: 12px;
+  font-weight: 600;
+  --border-radius: 10px;
+}
