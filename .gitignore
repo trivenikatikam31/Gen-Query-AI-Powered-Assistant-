@@ -1,0 +1,21 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Databases / generated data
+*.sqlite3
+chroma_db/
+
+# OS files
+.DS_Store
+
+# Node
+node_modules/
+
+# VS Code
+.vscode/

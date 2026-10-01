@@ -1,0 +1,14 @@
+# Query: max_length=20
+# ContextLines: 1
+
+2 results - 2 files
+
+studentapp\models.py:
+  52      roles = models.CharField(
+  53:         max_length=20,
+  54          choices=ROLE_CHOICES
+
+studentapp\migrations\0002_document.py:
+  17                  ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+  18:                 ('title', models.CharField(max_length=200)),
+  19                  ('file', models.FileField(upload_to='documents/')),

@@ -1,0 +1,158 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">dashboard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar class="header-bar">
+
+    <ion-title>
+      Student Portal
+    </ion-title>
+
+    <!-- LOGOUT BUTTON IN HEADER -->
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="logout()">
+        Logout
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="welcome-bg">
+
+  <!-- HERO WELCOME -->
+  <div class="hero" *ngIf="profile">
+
+    <div class="avatar">
+      {{ profile.first_name?.charAt(0) | uppercase }}
+    </div>
+
+    <h1>
+      Welcome, {{ profile.first_name }} {{ profile.last_name }} 
+    </h1>
+
+    <p>We’re happy to see you back</p>
+
+  </div>
+
+
+  <!-- NEXT STEP CARD -->
+  <ion-card class="next-card">
+
+    <ion-card-header>
+      <ion-card-title>📂 Upload Your Documents</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        Upload your required student documents securely.
+      </p>
+
+      <ion-button expand="block" type="button" (click)="goUpload()">
+        Upload Documents
+      </ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card class="ai-card">
+    <ion-card-header>
+      <ion-card-title>AI ASSISTANT</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="chat-container">
+        <div
+          class="message"
+          *ngFor="let message of messages"
+          [class.user-message]="message.role ==='user'"
+          [class.assistant-message]= "message.role === 'assistant'"
+        >
+          <div class="message-label">
+            {{ message.role === 'user' ? 'You': 'AI' }}
+          </div>
+
+          <div class="message-content">
+             {{ message.content }} 
+          </div>
+
+          <div 
+            class="sources"
+            *ngIf="
+             message.role === 'assistant'
+             && message.sources?.length
+            "
+          >
+            <div class="sources-title">
+              Sources
+            </div>
+            <div
+              class="source-item"
+              *ngFor="let source of message.sources"
+            >
+              {{source.source}}
+
+              <span>
+                . chunk {{ source.chunk_index }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--loading-->
+        <div 
+          class="message assistant-message"
+          *ngIf="chatLoading"
+        >
+         <div class="message-label">AI</div>
+         <div class="message-content">
+           Thinking...
+         </div>
+
+        </div>
+
+      </div>
+
+      <!--Input-->
+      <div class="chat-input-container">
+        <ion-input
+          [(ngModel)]="chatInput"
+          placeholder="Ask Something"
+          [disabled]="chatLoading"
+          (Keyup.enter)="sendMessage()"
+        > 
+        </ion-input>
+
+        <ion-button
+          (click)="sendMessage()"
+          [disabled]="chatLoading || !chatInput.trim()"
+        >
+         Send
+        </ion-button>
+
+      </div>
+
+    </ion-card-content>
+
+  
+  </ion-card>
+  
+
+</ion-content>

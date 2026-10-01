@@ -1,0 +1,75 @@
+.login-bg {
+  --background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.login-container {
+  min-height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.2);
+}
+
+ion-item {
+  margin-bottom: 12px;
+}
+
+.login-btn {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.register-line {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+
+  span {
+    color: #777;
+    margin-right: 4px;
+  }
+
+  a {
+    color: #1e3c72;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  a:hover {
+    color: #2a5298;
+    text-decoration: underline;
+  }
+
+  a:active {
+    transform: scale(0.98);
+  }
+}
